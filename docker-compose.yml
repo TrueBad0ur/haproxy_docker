@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  haproxy:
+    image: "haproxy:2.8-alpine"
+    container_name: haproxy
+    ports:
+      - 80:80
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+
+  web1:
+    image: truebad0ur/gowebapp:v3
+    container_name: web1
+  web2:
+    image: truebad0ur/gowebapp:v3
+    container_name: web2
+  web3:
+    image: truebad0ur/gowebapp:v3
+    container_name: web3
